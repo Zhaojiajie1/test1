@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="iconfont.css">
+    <title>注册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: rgb(51, 51, 51);
+            color: rgb(82, 79, 79);
+        }
+
+        .header a {
+            text-decoration: none;
+            color: rgb(148, 140, 140);
+            font-size: 10px;
+        }
+
+        .header a:hover {
+            color: #fff;
+        }
+
+        .span1 {
+            position: absolute;
+            left: 140px;
+            top: 14px;
+        }
+
+        .span2 {
+            position: absolute;
+            right: 300px;
+            top: 14px;
+        }
+
+        .span3 {
+            position: absolute;
+            right: 150px;
+            top: 5.5px;
+            width: 110px;
+            height: 40px;
+            background-color: rgb(66, 66, 66);
+            text-align: center;
+            line-height: 40px;
+            font-size: 10px;
+            color: rgb(148, 140, 140);
+        }
+
+        .span3:hover {
+            cursor: pointer;
+            color: rgb(230, 143, 13);
+        }
+
+        .div1 {
+            position: absolute;
+            left: -10px;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+            display: none;
+            z-index: 1;
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .span3:hover .div1 {
+            display: block;
+        }
+
+        .div2 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            width: 1226px;
+            height: 100px;
+        }
+
+        .div3 {
+            position: absolute;
+            top: 22px;
+            width: 60px;
+            height: 60px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAIAAAAnuUURAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6REQxNDIzMzc1RkEyMTFFNjhEQkRFNkMzMzA0NEE5NUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6REQxNDIzMzg1RkEyMTFFNjhEQkRFNkMzMzA0NEE5NUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpERDE0MjMzNTVGQTIxMUU2OERCREU2QzMzMDQ0QTk1RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpERDE0MjMzNjVGQTIxMUU2OERCREU2QzMzMDQ0QTk1RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgxLC6cAAAEfSURBVHjaYvyfzjD4ARMDw6grR1056spRV466ctSVo64cdeWoK0ddOcJcyUKswqm/GJhZiVX8/z/Dh6cMtw8xbGtheHEdRWrKDwYWdij7zy+GHHaqhiXxTgQCRkYGQRkGsyiGqjMMhkGowYLkLBa2wRHjbFwMiYsZpHUHfboEOtSzil7pEg3kcDD8+YlFnE+CwT6LwasGFOlwoOY4QGGJ1YlA8OkFw+Y6hqNzUJ0uPihj/MjsASqJcIHJ3xlYOaDs398ZcrlAjOfXBlmpDnciiM0JZfz8OlpDjrpy1JWjrhx15agrKXbl398I9u8fSM2OX9jFkdnIepHVI4vjb1WPjv6PunLUlaOuHHXlqCtHXTnqylFXjrpy1JWDEgAEGABUnznSn3aBrgAAAABJRU5ErkJggg==) no-repeat;
+        }
+
+        .div4 {
+            position: absolute;
+            top: 20px;
+            left: 60px;
+            width: 200px;
+            height: 80px;
+            background: url(http://180.76.185.37/static/img/win.74c0d23.gif) no-repeat;
+        }
+
+        .ul1 {
+            position: absolute;
+            height: 100%;
+            width: 600px;
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+            left: 190px;
+        }
+
+        .ul1 li {
+
+            list-style: none;
+            height: 60px;
+
+        }
+
+        .ul1 a {
+            color: black;
+        }
+
+        .ul1 a:hover {
+            color: rgb(230, 143, 13);
+        }
+
+        .div5 {
+            position: relative;
+            left: 957px;
+            bottom: 23px;
+            width: 270px;
+        }
+
+        .input1 {
+            position: absolute;
+            left: 0px;
+            border: 1px solid #ccc;
+            width: 220px;
+            height: 50px;
+            outline: 0;
+        }
+
+        .btn1 {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            right: 1px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .btn1 span {
+            font-size: 20px;
+        }
+
+        .btn1:hover {
+            cursor: pointer;
+            color: orange;
+        }
+
+        .ul2 a {
+            color: black;
+            font-size: 14px;
+        }
+
+        .ul2 span {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .ul2 li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 219px;
+            list-style: none;
+            background-color: red;
+
+        }
+
+        .ul2 {
+            position: absolute;
+            right: 49px;
+            top: 61px;
+            display: none;
+        }
+
+        .div6 {
+            position: absolute;
+            width: 240px;
+            height: 300px;
+        }
+
+        .div6 img {
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            width: 220px;
+        }
+
+        .span5 {
+            position: absolute;
+            top: 8px;
+            left: 80px;
+            background-color: #fff;
+            width: 80px;
+            border: 1px solid orange;
+            text-align: center;
+            color: orange;
+        }
+
+        .span6 {
+            position: absolute;
+            bottom: 45px;
+            left: 100px;
+            font-size: 15px;
+        }
+
+        .span7 {
+            position: absolute;
+            bottom: 28px;
+            left: 95px;
+            color: orange;
+            font-size: 15px;
+        }
+
+        .div7 {
+            position: absolute;
+            z-index: 10000;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            top: 60px;
+            left: -220px;
+            width: 100%;
+            height: 300px;
+            background-color: #fff;
+            display: none;
+            box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.6);
+        }
+
+        .div8 {
+            position: absolute;
+            left: 240px;
+            bottom: 50px;
+            width: 0.2px;
+            height: 200px;
+            background-color: rgb(70, 37, 37);
+        }
+
+        .div9 {
+            position: absolute;
+            left: 250px;
+            top: 0px;
+            width: 240px;
+            height: 300px;
+        }
+
+        .div9 img {
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            width: 220px;
+        }
+
+        .li1:hover .div7 {
+            display: block;
+        }
+
+
+
+        .bottom {
+            width: 100%;
+            background-color: #fff;
+        }
+
+        .ul13 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+            width: 1226px;
+            height: 86px;
+            margin-top: 50px;
+            list-style: none;
+            color: #e0e0e0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .ul13 li {
+            line-height: 100%;
+            text-align: center;
+        }
+
+        .ul13 i {
+            font-size: 20px;
+        }
+
+        .div31 {
+            display: flex;
+            justify-content: space-between;
+            width: 1226px;
+            margin: 0 auto;
+            height: 132px;
+        }
+
+        .div32 {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            width: 120px;
+            height: 112px;
+        }
+
+        .span10 {
+            font-size: 14px;
+            color: #424242;
+            margin-bottom: 40px;
+        }
+
+        .span12 {
+            color: #757575;
+            font-size: 12px;
+        }
+
+        .div33 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            width: 252px;
+            height: 112px;
+        }
+
+        .span13 {
+            font-size: 22px;
+            color: #ff6700;
+        }
+
+        .span14 {
+            width: 120px;
+            color: #616161;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .a6 {
+            width: 120px;
+            height: 30px;
+            border: 1px solid #FF6700;
+            color: #FF6700;
+            font-size: 12px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .div33 .a6:hover {
+            background-color: #FF6700;
+            color: #fff;
+        }
+
+        .div34 {
+            position: relative;
+            width: 1226px;
+            height: 120px;
+            margin: 34px auto;
+        }
+
+        .div34>img {
+            float: left;
+            width: 57px;
+            height: 57px;
+        }
+
+        .div35 {
+            float: left;
+            margin-left: 20px;
+        }
+
+        .p11 {
+            font-size: 12px;
+            color: #757575;
+        }
+
+        .p12 {
+            font-size: 12px;
+            color: #b0b0b0;
+        }
+
+        .imgbox img {
+            width: 85px;
+            height: 28px;
+            float: right;
+        }
+
+        .end {
+            height: 50px;
+            text-align: center;
+            width: 100%;
+            background-color: rgb(250, 250, 250);
+        }
+
+        .bottom a {
+            color: #616161;
+        }
+
+        .bottom a:hover {
+            color: #FF6700;
+        }
+
+        .main-cotainer {
+            width: 100%;
+        }
+
+        .main {
+
+            padding: 10px 0 10px 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.2);
+            width: 360px;
+            margin: 0 auto;
+        }
+
+        .userinfo {
+            margin: 30px 0;
+        }
+
+        .content-name {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #606266;
+        }
+
+        input {
+            outline: 0;
+        }
+
+        .userinfo input {
+            border-radius: 5px;
+            height: 40px;
+            width: 318px;
+            border: 1px solid rgb(218, 218, 218);
+        }
+
+        .sub {
+            border: 0;
+            border-radius: 5px;
+            width: 70px;
+            height: 40px;
+            background-color: rgb(64, 158, 255);
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .sub:hover {
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span class="span1">
+            <a href="./body.html">小米商城</a>
+            |
+            <a href="#">MIUI</a>
+            |
+            <a href="#">米聊</a>
+            |
+            <a href="#">游戏</a>
+            |
+            <a href="#">多看阅读</a>
+            |
+            <a href="#">云服务</a>
+            |
+            <a href="#">金融</a>
+            |
+            <a href="#">小米网移动版</a>
+            |
+            <a href="#">问题反馈</a>
+            |
+            <a href="#">Select Region</a>
+        </span>
+        <span class="span2">
+            <a href="./login.html">登录</a>
+            |
+            <a href="#">注册</a>
+        </span>
+        <span class="span3">
+            购物车<span class="number">（0）</span>
+            <div class="div1">购物车中还没有商品，赶快选购吧!</div>
+        </span>
+    </div>
+    <div class="div2">
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <ul class="ul1">
+            <li class="li1">
+                <a href="#">小米手机</a>
+                <div class="div7">
+                    <div class="div6">
+                        <span class="span5">新品</span>
+                        <a href="#">
+                            <img src="http://180.76.185.37/static/img/xm6.png" alt="Xiaomi 6">
+                        </a>
+                        <span class=" span6">小米6</span>
+                        <span class="span7">1699起</span>
+                    </div>
+                    <div class="div8"></div>
+                    <div class="div9">
+                        <span class="span5">新品</span>
+                        <a href="#">
+                            <img src="http://cdn.cnbj1.fds.api.mi-img.com/mi-mall/075d45f17b32b39c98be850a5592bbee.png?thumb=1&amp;w=210&amp;h=144&amp;f=webp&amp;q=90"
+                                alt="Xiaomi 12X">
+                        </a>
+                        <span class=" span6">小米12</span>
+                        <span class="span7">2699起</span>
+
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">红米</a></li>
+            <li><a href="#">平板 · 笔记本</a></li>
+            <li><a href="#">电视</a></li>
+            <li><a href="#">盒子 · 影音</a></li>
+            <li><a href="#">路由器</a></li>
+            <li><a href="#">智能硬件</a></li>
+            <li><a href="#">服务</a></li>
+            <li><a href="#">社区</a></li>
+        </ul>
+        <div class="div5">
+            <input type="search" class="input1">
+            <button class="btn1"><span class="iconfont icon-sousuo"></span></button>
+        </div>
+        <ul class="ul2">
+            <li><a href="#">小米手机</a> <span class="span4">约有11件</span></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+
+    </div>
+    <div class="main-cotainer">
+        <div class="main">
+            <div class="main-header">
+                <h3 class="title">注册</h3>
+            </div>
+            <div class="userinfo">
+                <p class="content-name">用户名</p>
+                <input id="username">
+            </div>
+            <div class="userinfo">
+                <p class="content-name">密码</p>
+                <input id="password" type="password">
+            </div>
+            <div class="userinfo">
+                <p class="content-name">昵称</p>
+                <input id="name">
+            </div>
+            <button class="sub">注册</button>
+        </div>
+    </div>
+    <div class="bottom">
+        <div>
+            <ul class="ul13">
+                <li><a href="#">
+                        <i class="iconfont icon-editor2"></i>&nbsp预约维修服务
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-7"></i>&nbsp7天无理由退货
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-15"></i>&nbsp15天免费换货
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-gift"></i>&nbsp满150元包邮
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-wxbdingwei"></i>&nbsp520余家售后网点
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="div31">
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div33">
+                <span class="span13">400-100-5678</span>
+                <span class="span14">周一至周日 8:00-18:00
+                    （仅收市话费）</span>
+                <a href="#" class="a6">24小时在线客服</a>
+            </div>
+
+        </div>
+
+        <div class="div34">
+            <img src="http://s02.mifile.cn/assets/static/image/logo-mi2.png">
+            <div class="div35">
+                <p class="p11">
+                    小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</p>
+                <p class="p12">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</p>
+                <p class="p12">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+            </div>
+            <div class="imgbox">
+                <img src="http://i1.mifile.cn/f/i/17/site/truste.png">
+                <img src="http://s01.mifile.cn/i/v-logo-2.png">
+                <img src="http://xyt.xinchacha.com/img/icon/icon3.png">
+                <img src="http://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png">
+            </div>
+        </div>
+
+        <div class="end">
+            <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAATCAMAAACwedgiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkMxNDdEOTcyRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkMxNDdEOTczRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzE0N0Q5NzBEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzE0N0Q5NzFEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jm4Y6AAAAM1BMVEXa2tr29vbq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">
+
+        </div>
+    </div>
+
+    <script>
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+        let name = document.getElementById('name');
+        let sub = document.getElementsByClassName('sub')[0];
+
+        sub.onclick = function () {
+            ajax({
+                type: "POST",
+                url: "http://180.76.185.37:3000/register",
+                data: {
+                    username: username.value,
+                    password: password.value,
+                    name: name.value,
+                },
+                async: true,
+                success: function (res) {
+                    res = JSON.parse(res);
+                    console.log(res);
+                    //if (res.message == "")
+                }
+            })
+        }
+
+        function ajax(opt) {
+            let defaultParam = {
+                type: 'get',
+                url: '#',
+                data: {},
+                async: true,
+                success: function () { },
+            }
+
+            for (key in opt) {
+                defaultParam[key] = opt[key];
+            }
+            let paramStr = "";
+            for (key in defaultParam.data) {
+                paramStr += key + '=' + defaultParam.data[key] + '&';
+            }
+            paramStr = paramStr.substr(0, paramStr.length - 1);
+
+            let xhr = new XMLHttpRequest();
+            if (defaultParam.type == 'get') {
+                xhr.open(defaultParam.type, defaultParam.url + '?' + paramStr, defaultParam.async);
+            } else {
+                xhr.open(defaultParam.type, defaultParam.url, defaultParam.async);
+                xhr.setRequestHeader('Content-type', 'application/json');
+                xhr.send(JSON.stringify(defaultParam.data));
+            }
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        defaultParam.success(xhr.responseText);
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
