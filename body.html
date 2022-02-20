@@ -722,6 +722,10 @@
             margin-left: 120px;
         }
 
+        li {
+            list-style: none;
+        }
+
         .p8 {
             margin-top: 5px;
             margin-left: 4px;
@@ -1143,11 +1147,11 @@
             cursor: pointer;
         }
 
-        .admin {
+        .adminbox {
             margin: 20px 0;
         }
 
-        .admin span {
+        .adminbox span {
             font-size: 14px;
             color: #606266;
         }
@@ -1288,6 +1292,179 @@
         tr {
             border-top: 1px solid #ccc;
             padding: 10px 10px;
+        }
+
+        /* 管理员部分的CSS */
+        .adminBox {
+            width: 100%;
+        }
+
+        .adminBtn:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .row:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .row {
+            padding: 0;
+        }
+
+        .admin {
+            width: 1450px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .admin-header {
+            position: relative;
+            height: 50px;
+            padding: 0 32px;
+            background: #f8f8f9;
+            border-bottom: 1px solid #dddee1;
+        }
+
+        .addData {
+            position: absolute;
+            right: 60px;
+            top: 4px;
+            color: #606266;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            width: 126px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #fff;
+        }
+
+        .admin-title {
+            position: absolute;
+            top: 15px;
+            font-size: 14px;
+        }
+
+
+        .titleBox {
+            padding: 5px 32px;
+            border-bottom: 1px solid #dddee1;
+            background: #eee;
+        }
+
+        .operate {
+            float: right;
+            text-align: center;
+            width: 150px;
+            display: inline-block;
+        }
+
+        .admin-name {
+            width: 200px;
+            float: left;
+        }
+
+        .detail {
+            border-top: 1px solid #dddee1;
+            margin-bottom: 6px;
+            padding-right: 32px;
+            padding-top: 17px;
+            padding-bottom: 35px;
+        }
+
+        .Btn {
+            width: 50px;
+            height: 30px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        button:hover {
+            cursor: pointer;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail span {
+            font-size: 12px;
+        }
+
+        /* 添加信息部分CSS */
+        input {
+            outline: 0;
+        }
+
+        .addBox {
+            position: absolute;
+            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+        }
+
+        .add {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 456px;
+            height: 544px;
+            background-color: #fff;
+            z-index: 3001;
+        }
+
+        .add-header {
+            width: 100%;
+            padding: 20px 20px;
+            font-size: 18px;
+        }
+
+        .add-title {
+            margin: 5px 0;
+            color: #606266;
+            font-size: 14px;
+        }
+
+        .add-detail input {
+            width: 415px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 4px;
+            border: 1px solid #dcdfe6;
+        }
+
+        .add-detail {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .backBtn {
+            width: 70px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #dcdfe6;
+            border-radius: 8px;
+            float: right;
+            color: #606266;
+            font-size: 14px;
+        }
+
+        .confirmBtn {
+            margin: 0 20px;
+            font-size: 14px;
+            width: 98px;
+            height: 40px;
+            border: 0;
+            float: right;
+            background-color: #409eff;
+            border-radius: 8px;
+            color: #fff;
         }
     </style>
 </head>
@@ -2558,7 +2735,7 @@
                     <p class="content-name">密码</p>
                     <input id="loginPassword" type="password">
                 </div>
-                <div class="admin">
+                <div class="adminbox">
                     <input type="checkbox" id="admin">
                     <span class="word">管理员</span>
                 </div>
@@ -2612,110 +2789,162 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="bottom">
-        <div>
-            <ul class="ul13">
-                <li><a href="#">
-                        <i class="iconfont icon-editor2"></i>&nbsp预约维修服务
-                    </a>
-                </li>
-                |
-                <li>
-                    <a href="#">
-                        <i class="iconfont icon-7"></i>&nbsp7天无理由退货
-                    </a>
-                </li>
-                |
-                <li>
-                    <a href="#">
-                        <i class="iconfont icon-15"></i>&nbsp15天免费换货
-                    </a>
-                </li>
-                |
-                <li>
-                    <a href="#">
-                        <i class="iconfont icon-gift"></i>&nbsp满150元包邮
-                    </a>
-                </li>
-                |
-                <li>
-                    <a href="#">
-                        <i class="iconfont icon-wxbdingwei"></i>&nbsp520余家售后网点
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="div31">
-            <div class="div32">
-                <span class="span10">帮助中心</span>
-                <span class="span12"><a href="#">账户管理</a></span>
-                <span class="span12"><a href="#">购物指南</a></span>
-                <span class="span12"><a href="#">订单操作</a></span>
+        <!-- 管理员端 -->
+        <div class="adminBox">
+            <div class="admin">
+                <div class="admin-header">
+                    <span class="admin-title">管理员端</span>
+                    <button class="addData">添加购物数据</button>
+                </div>
+                <div class="titleBox row">
+                    <span class="deleteColumn operate">删除</span>
+                    <span class="modifyColumn operate">修改</span>
+                    <span class="admin-password operate">密码</span>
+                    <span class="admin-username operate">用户名</span>
+                    <span class="admin-name operate">用户名称</span>
+                </div>
+                <div class="row">
+                    <ul class="userlist">
+                    </ul>
+                </div>
             </div>
-            <div class="div32">
-                <span class="span10">帮助中心</span>
-                <span class="span12"><a href="#">账户管理</a></span>
-                <span class="span12"><a href="#">购物指南</a></span>
-                <span class="span12"><a href="#">订单操作</a></span>
-            </div>
-            <div class="div32">
-                <span class="span10">帮助中心</span>
-                <span class="span12"><a href="#">账户管理</a></span>
-                <span class="span12"><a href="#">购物指南</a></span>
-                <span class="span12"><a href="#">订单操作</a></span>
-            </div>
-            <div class="div32">
-                <span class="span10">帮助中心</span>
-                <span class="span12"><a href="#">账户管理</a></span>
-                <span class="span12"><a href="#">购物指南</a></span>
-                <span class="span12"><a href="#">订单操作</a></span>
-            </div>
-            <div class="div32">
-                <span class="span10">帮助中心</span>
-                <span class="span12"><a href="#">账户管理</a></span>
-                <span class="span12"><a href="#">购物指南</a></span>
-                <span class="span12"><a href="#">订单操作</a></span>
-            </div>
-            <div class="div32">
-                <span class="span10">帮助中心</span>
-                <span class="span12"><a href="#">账户管理</a></span>
-                <span class="span12"><a href="#">购物指南</a></span>
-                <span class="span12"><a href="#">订单操作</a></span>
-            </div>
-            <div class="div33">
-                <span class="span13">400-100-5678</span>
-                <span class="span14">周一至周日 8:00-18:00
-                    （仅收市话费）</span>
-                <a href="#" class="a6">24小时在线客服</a>
-            </div>
-
-        </div>
-
-        <div class="div34">
-            <img src="http://s02.mifile.cn/assets/static/image/logo-mi2.png">
-            <div class="div35">
-                <p class="p11">
-                    小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</p>
-                <p class="p12">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</p>
-                <p class="p12">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
-            </div>
-            <div class="imgbox">
-                <img src="http://i1.mifile.cn/f/i/17/site/truste.png">
-                <img src="http://s01.mifile.cn/i/v-logo-2.png">
-                <img src="http://xyt.xinchacha.com/img/icon/icon3.png">
-                <img src="http://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png">
+            <!-- 添加信息 -->
+            <div class="addBox">
+                <div class="add">
+                    <div class="add-header">修改信息</div>
+                    <div class="add-detail">
+                        <p class="add-title">商品名称</p>
+                        <input id="addGoodname" placeholder="请输入商品名称">
+                    </div>
+                    <div class="add-detail">
+                        <p class="add-title">商品品牌</p>
+                        <input id="addGoodbrand" placeholder="请输入商品品牌">
+                    </div>
+                    <div class="add-detail">
+                        <p class="add-title">图片地址</p>
+                        <input id="addGoodimg" placeholder="请输入商品图片地址">
+                    </div>
+                    <div class="add-detail">
+                        <p class="add-title">售量</p>
+                        <input id="addGoodbuy" placeholder="默认售量为0">
+                    </div>
+                    <div class="add-detail">
+                        <p class="add-title">价格</p>
+                        <input id="addGoodprice" placeholder="请输入商品价格">
+                    </div>
+                    <div class="add-detail">
+                        <p class="add-title">颜色</p>
+                        <input id="addGoodcolor" placeholder="请输入商品颜色">
+                    </div>
+                    <button class="confirmBtn">确认修改</button>
+                    <button class="backBtn">取消</button>
+                </div>
             </div>
         </div>
+        <div class="bottom">
+            <div>
+                <ul class="ul13">
+                    <li><a href="#">
+                            <i class="iconfont icon-editor2"></i>&nbsp预约维修服务
+                        </a>
+                    </li>
+                    |
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-7"></i>&nbsp7天无理由退货
+                        </a>
+                    </li>
+                    |
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-15"></i>&nbsp15天免费换货
+                        </a>
+                    </li>
+                    |
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-gift"></i>&nbsp满150元包邮
+                        </a>
+                    </li>
+                    |
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-wxbdingwei"></i>&nbsp520余家售后网点
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="div31">
+                <div class="div32">
+                    <span class="span10">帮助中心</span>
+                    <span class="span12"><a href="#">账户管理</a></span>
+                    <span class="span12"><a href="#">购物指南</a></span>
+                    <span class="span12"><a href="#">订单操作</a></span>
+                </div>
+                <div class="div32">
+                    <span class="span10">帮助中心</span>
+                    <span class="span12"><a href="#">账户管理</a></span>
+                    <span class="span12"><a href="#">购物指南</a></span>
+                    <span class="span12"><a href="#">订单操作</a></span>
+                </div>
+                <div class="div32">
+                    <span class="span10">帮助中心</span>
+                    <span class="span12"><a href="#">账户管理</a></span>
+                    <span class="span12"><a href="#">购物指南</a></span>
+                    <span class="span12"><a href="#">订单操作</a></span>
+                </div>
+                <div class="div32">
+                    <span class="span10">帮助中心</span>
+                    <span class="span12"><a href="#">账户管理</a></span>
+                    <span class="span12"><a href="#">购物指南</a></span>
+                    <span class="span12"><a href="#">订单操作</a></span>
+                </div>
+                <div class="div32">
+                    <span class="span10">帮助中心</span>
+                    <span class="span12"><a href="#">账户管理</a></span>
+                    <span class="span12"><a href="#">购物指南</a></span>
+                    <span class="span12"><a href="#">订单操作</a></span>
+                </div>
+                <div class="div32">
+                    <span class="span10">帮助中心</span>
+                    <span class="span12"><a href="#">账户管理</a></span>
+                    <span class="span12"><a href="#">购物指南</a></span>
+                    <span class="span12"><a href="#">订单操作</a></span>
+                </div>
+                <div class="div33">
+                    <span class="span13">400-100-5678</span>
+                    <span class="span14">周一至周日 8:00-18:00
+                        （仅收市话费）</span>
+                    <a href="#" class="a6">24小时在线客服</a>
+                </div>
 
-        <div class="end">
-            <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAATCAMAAACwedgiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkMxNDdEOTcyRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkMxNDdEOTczRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzE0N0Q5NzBEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzE0N0Q5NzFEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jm4Y6AAAAM1BMVEXa2tr29vbq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">
+            </div>
 
+            <div class="div34">
+                <img src="http://s02.mifile.cn/assets/static/image/logo-mi2.png">
+                <div class="div35">
+                    <p class="p11">
+                        小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</p>
+                    <p class="p12">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</p>
+                    <p class="p12">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+                </div>
+                <div class="imgbox">
+                    <img src="http://i1.mifile.cn/f/i/17/site/truste.png">
+                    <img src="http://s01.mifile.cn/i/v-logo-2.png">
+                    <img src="http://xyt.xinchacha.com/img/icon/icon3.png">
+                    <img src="http://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png">
+                </div>
+            </div>
+
+            <div class="end">
+                <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAATCAMAAACwedgiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkMxNDdEOTcyRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkMxNDdEOTczRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzE0N0Q5NzBEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzE0N0Q5NzFEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jm4Y6AAAAM1BMVEXa2tr29vbq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">
+
+            </div>
         </div>
-    </div>
-    <script src="./1.js"></script>
-    <script src="./cart.js"></script>
+        <script src="../js/1.js"></script>
+        <script src="../js/cart.js"></script>
+        <script src="../js/login.js"></script>
 </body>
 
 </html>

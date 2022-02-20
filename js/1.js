@@ -155,48 +155,7 @@ creat.onclick = function () {
         }
     })
 }
-//登录部分JS
-let loginUsername = document.getElementById('loginUsername');
-let loginPassword = document.getElementById('loginPassword');
-let loginBtn = document.getElementById('login');
-let admin = document.getElementById('admin');
-let auth = 'user';
-//用户token
-let token = '';
-//用户name
-let name = '';
 
-loginBtn.onclick = function () {
-    if (admin.checked) {
-        auth = 'admin';
-    }
-    ajax({
-        type: 'post',
-        url: "http://180.76.185.37:3000/login",
-        data: {
-            username: loginUsername.value,
-            password: loginPassword.value,
-            auth: auth,
-        },
-        success: function (res) {
-            res = JSON.parse(res);
-            console.log(res);
-            if (res.state === 1) {
-                alert(res.message);
-                token = res.token;
-                console.log(token);
-                name = res.name;
-                for (let i = 0; i < childBox.length; i++) {
-                    childBox[i].classList.remove('show');
-                }
-                body.className = body.className + ' ' + 'show';
-
-                box.style.height = document.getElementsByClassName('show')[0].offsetHeight + 'px';
-                toLogin.innerText = "用户名:" + name;
-            }
-        }
-    })
-}
 //插入购物车
 let buyBtn = document.getElementsByClassName('buy');
 let gid = '';
