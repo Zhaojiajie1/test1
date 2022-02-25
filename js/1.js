@@ -1,3 +1,8 @@
+/* 许多部分js的混合，写的时候有些没注意，
+下回会进行好好分类的，不过大多数js部分有注释 */
+
+
+
 //轮播图的js
 let items = document.getElementsByClassName("item")
 let btn1 = document.getElementById("btn1");

@@ -1,0 +1,146 @@
+.bottom {
+    width: 100%;
+    background-color: #fff;
+}
+
+.spacer {
+    width: 100%;
+    height: 150px;
+}
+
+.ul13 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    width: 1226px;
+    height: 86px;
+    margin-top: 50px;
+    list-style: none;
+    color: #e0e0e0;
+    border-bottom: 1px solid #ccc;
+}
+
+.ul13 li {
+    line-height: 100%;
+    text-align: center;
+}
+
+.ul13 i {
+    font-size: 20px;
+}
+
+.div31 {
+    display: flex;
+    justify-content: space-between;
+    width: 1226px;
+    margin: 0 auto;
+    height: 132px;
+}
+
+.div32 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 120px;
+    height: 112px;
+}
+
+.span10 {
+    font-size: 14px;
+    color: #424242;
+    margin-bottom: 40px;
+}
+
+.span12 {
+    color: #757575;
+    font-size: 12px;
+}
+
+.div33 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 252px;
+    height: 112px;
+}
+
+.span13 {
+    font-size: 22px;
+    color: #ff6700;
+}
+
+.span14 {
+    width: 120px;
+    color: #616161;
+    text-align: center;
+    font-size: 12px;
+}
+
+.a6 {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #FF6700;
+    color: #FF6700;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.div33 .a6:hover {
+    background-color: #FF6700;
+    color: #fff;
+}
+
+.div34 {
+    position: relative;
+    width: 1226px;
+    height: 120px;
+    margin: 34px auto;
+}
+
+.div34>img {
+    float: left;
+    width: 57px;
+    height: 57px;
+}
+
+.div35 {
+    float: left;
+    margin-left: 20px;
+}
+
+.p11 {
+    font-size: 12px;
+    color: #757575;
+}
+
+.p12 {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.imgbox img {
+    width: 85px;
+    height: 28px;
+    float: right;
+}
+
+.end {
+    height: 50px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+}
+
+.bottom a {
+    color: #616161;
+}
+
+.bottom a:hover {
+    color: #FF6700;
+}

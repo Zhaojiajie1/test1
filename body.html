@@ -4,1473 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="iconfont.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/body.css">
+    <link rel="stylesheet" href="./css/bottom.css">
+    <link rel="stylesheet" href="./css/register+login.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/lunbotu.css">
     <title>主页</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .header {
-            position: relative;
-            width: 100%;
-            height: 50px;
-            background-color: rgb(51, 51, 51);
-            color: rgb(82, 79, 79);
-        }
-
-        .header a {
-            text-decoration: none;
-            color: rgb(148, 140, 140);
-            font-size: 10px;
-        }
-
-        .header a:hover {
-            color: #fff;
-        }
-
-        .span1 {
-            position: absolute;
-            left: 140px;
-            top: 14px;
-        }
-
-        .span2 {
-            position: absolute;
-            right: 300px;
-            top: 14px;
-        }
-
-        .span3 {
-            position: absolute;
-            right: 150px;
-            top: 5.5px;
-            width: 110px;
-            height: 40px;
-            background-color: rgb(66, 66, 66);
-            text-align: center;
-            line-height: 40px;
-            font-size: 10px;
-            color: rgb(148, 140, 140);
-        }
-
-        .span3:hover {
-            cursor: pointer;
-            color: rgb(230, 143, 13);
-        }
-
-        .div1 {
-            position: absolute;
-            left: -10px;
-            width: 200px;
-            height: 50px;
-            line-height: 50px;
-            color: black;
-            display: none;
-            z-index: 1;
-            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .span3:hover .div1 {
-            display: block;
-        }
-
-        .div2 {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin: 0 auto;
-            width: 1226px;
-            height: 100px;
-        }
-
-        .div3 {
-            position: absolute;
-            top: 22px;
-            width: 60px;
-            height: 60px;
-            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAIAAAAnuUURAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6REQxNDIzMzc1RkEyMTFFNjhEQkRFNkMzMzA0NEE5NUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6REQxNDIzMzg1RkEyMTFFNjhEQkRFNkMzMzA0NEE5NUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpERDE0MjMzNTVGQTIxMUU2OERCREU2QzMzMDQ0QTk1RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpERDE0MjMzNjVGQTIxMUU2OERCREU2QzMzMDQ0QTk1RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgxLC6cAAAEfSURBVHjaYvyfzjD4ARMDw6grR1056spRV466ctSVo64cdeWoK0ddOcJcyUKswqm/GJhZiVX8/z/Dh6cMtw8xbGtheHEdRWrKDwYWdij7zy+GHHaqhiXxTgQCRkYGQRkGsyiGqjMMhkGowYLkLBa2wRHjbFwMiYsZpHUHfboEOtSzil7pEg3kcDD8+YlFnE+CwT6LwasGFOlwoOY4QGGJ1YlA8OkFw+Y6hqNzUJ0uPihj/MjsASqJcIHJ3xlYOaDs398ZcrlAjOfXBlmpDnciiM0JZfz8OlpDjrpy1JWjrhx15agrKXbl398I9u8fSM2OX9jFkdnIepHVI4vjb1WPjv6PunLUlaOuHHXlqCtHXTnqylFXjrpy1JWDEgAEGABUnznSn3aBrgAAAABJRU5ErkJggg==) no-repeat;
-        }
-
-        .div4 {
-            position: absolute;
-            top: 20px;
-            left: 60px;
-            width: 200px;
-            height: 80px;
-            background: url(http://180.76.185.37/static/img/win.74c0d23.gif) no-repeat;
-        }
-
-        .ul1 {
-            position: absolute;
-            height: 100%;
-            width: 600px;
-            display: flex;
-            justify-content: space-around;
-            align-items: end;
-            left: 190px;
-        }
-
-        .ul1 li {
-
-            list-style: none;
-            height: 60px;
-
-        }
-
-        .ul1 a {
-            color: black;
-        }
-
-        .ul1 a:hover {
-            color: rgb(230, 143, 13);
-        }
-
-        .div5 {
-            position: relative;
-            left: 957px;
-            bottom: 23px;
-            width: 270px;
-        }
-
-        .input1 {
-            position: absolute;
-            left: 0px;
-            border: 1px solid #ccc;
-            width: 220px;
-            height: 50px;
-            outline: 0;
-        }
-
-        .btn1 {
-            position: absolute;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            right: 1px;
-            width: 50px;
-            height: 50px;
-        }
-
-        .btn1 span {
-            font-size: 20px;
-        }
-
-        .btn1:hover {
-            cursor: pointer;
-            color: orange;
-        }
-
-        .ul2 a {
-            color: black;
-            font-size: 14px;
-        }
-
-        .ul2 span {
-            color: #ccc;
-            font-size: 14px;
-        }
-
-        .ul2 li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 219px;
-            list-style: none;
-            background-color: red;
-
-        }
-
-        .ul2 {
-            position: absolute;
-            right: 49px;
-            top: 61px;
-            display: none;
-        }
-
-        .div6 {
-            position: absolute;
-            width: 240px;
-            height: 300px;
-        }
-
-        .div6 img {
-            position: absolute;
-            top: 60px;
-            left: 10px;
-            width: 220px;
-        }
-
-        .span5 {
-            position: absolute;
-            top: 8px;
-            left: 80px;
-            background-color: #fff;
-            width: 80px;
-            border: 1px solid orange;
-            text-align: center;
-            color: orange;
-        }
-
-        .span6 {
-            position: absolute;
-            bottom: 45px;
-            left: 100px;
-            font-size: 15px;
-        }
-
-        .span7 {
-            position: absolute;
-            bottom: 28px;
-            left: 95px;
-            color: orange;
-            font-size: 15px;
-        }
-
-        .div7 {
-            position: absolute;
-            z-index: 10000;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            top: 60px;
-            left: -220px;
-            width: 100%;
-            height: 300px;
-            background-color: #fff;
-            display: none;
-            box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.6);
-        }
-
-        .div8 {
-            position: absolute;
-            left: 240px;
-            bottom: 50px;
-            width: 0.2px;
-            height: 200px;
-            background-color: rgb(70, 37, 37);
-        }
-
-        .div9 {
-            position: absolute;
-            left: 250px;
-            top: 0px;
-            width: 240px;
-            height: 300px;
-        }
-
-        .div9 img {
-            position: absolute;
-            top: 60px;
-            left: 10px;
-            width: 220px;
-        }
-
-        .li1:hover .div7 {
-            display: block;
-        }
-
-        .div10 {
-            width: 1226px;
-            height: 460px;
-            margin-top: 16px;
-            margin: auto;
-            background-color: rgb(226, 177, 177);
-            width: 1226px;
-            height: 460px;
-            position: relative;
-        }
-
-        .ul3 {
-            z-index: 6500;
-            position: absolute;
-            top: 0px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: start;
-            background-color: aqua;
-            width: 234px;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 0;
-        }
-
-        .ul3>li {
-            display: flex;
-            justify-content: space-between;
-            width: 234px;
-            height: 40px;
-            list-style: none;
-
-            line-height: 40px;
-            color: #fff;
-        }
-
-        .ul3>li:hover {
-            background-color: rgb(255, 103, 0);
-        }
-
-        .ul3 a {
-            color: #fff;
-        }
-
-        .ul11 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            background-color: #fff;
-            border-top: 1px solid #ccc;
-            width: 991px;
-            height: 460px;
-            position: absolute;
-            top: 0;
-            left: 220px;
-            display: none;
-            z-index: 1000;
-        }
-
-        .ul11>li {
-            width: 100%;
-            list-style: none;
-            margin: 15px 20px;
-        }
-
-        .ul11 img {
-            width: 40px;
-            height: 40px;
-        }
-
-        .ul11 a {
-            color: #666666;
-        }
-
-        .ul3-li1:hover #ul11 {
-            display: block;
-        }
-
-
-        .list {
-            position: relative;
-            width: 1226px;
-            height: 460px;
-        }
-
-        .item {
-            position: absolute;
-            width: 1226px;
-            height: 460px;
-            list-style: none;
-            z-index: 0;
-            opacity: 0;
-            transition: all 0.4s;
-        }
-
-        .item img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .div10 button {
-            position: absolute;
-            width: 40px;
-            height: 60px;
-            z-index: 999;
-            font-size: 20px;
-            color: rgb(137, 141, 138);
-            background-color: rgba(0, 0, 0, 0);
-            border: 0;
-        }
-
-        .div10 button:hover {
-            background-color: rgb(145, 135, 135);
-            color: #fff;
-            opacity: 0.5;
-            cursor: pointer;
-        }
-
-        #btn1 {
-            left: 234px;
-            top: 200px;
-        }
-
-        #btn2 {
-            right: 0;
-            top: 200px;
-        }
-
-        .item.active {
-            position: absolute;
-            list-style: none;
-            opacity: 1;
-            z-index: 100;
-        }
-
-        .pointList {
-            position: absolute;
-            display: flex;
-            justify-content: space-around;
-            bottom: 0px;
-            right: 50px;
-            width: 100px;
-            list-style: none;
-            z-index: 100000;
-        }
-
-        .point {
-            width: 10px;
-            height: 10px;
-            background-color: rgba(19, 17, 17, 0.4);
-            border-radius: 50%;
-            border: 1px solid rgb(221, 218, 218);
-        }
-
-        .point.active {
-            width: 10px;
-            height: 10px;
-            background-color: rgba(19, 17, 17, 0.9);
-            border-radius: 50%;
-            border: 2px solid rgb(221, 218, 218);
-        }
-
-        .ul3-li2:hover #ul12 {
-            display: block;
-        }
-
-        .div13 {
-            background-color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            margin: 0 auto;
-            width: 1226px;
-            height: 340px;
-            overflow-x: scroll;
-        }
-
-        .div14 {
-            position: relative;
-            flex-shrink: 0;
-            width: 25%;
-            height: 300px;
-            transition: all 0.3s;
-        }
-
-        .div14 a {
-            margin-top: 20px;
-            margin-left: 73px;
-            margin-top: 0px;
-            color: #333333;
-            text-align: center;
-        }
-
-        .div14 img {
-            width: 160px;
-            height: 160px;
-        }
-
-        .p1 {
-            margin-left: 145px;
-            margin-top: 5px;
-            font-size: 12px;
-            color: #666666;
-        }
-
-        .p2 {
-            margin-left: 130px;
-            margin-top: 5px;
-            color: #ff6709;
-            font-size: 14px;
-        }
-
-        .mainContainer {
-            background-color: rgb(245, 245, 245);
-        }
-
-        h2 {
-            margin-left: 146px;
-            display: block;
-            font-size: 22px;
-            font-weight: 200;
-            line-height: 58px;
-            color: #333;
-        }
-
-        .div14:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 8px -5px rgba(0, 0, 0, 0.3), 5px 0 8px -5px rgba(0, 0, 0, 0.3)
-        }
-
-        .div15 {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px auto;
-            width: 1226px;
-            height: 170px;
-        }
-
-        .div16 {
-            display: flex;
-            flex-wrap: wrap;
-            width: 234px;
-            height: 170px;
-            background: #5f5750;
-        }
-
-        .div15 img {
-            width: 316px;
-            height: 170px;
-        }
-
-        .div17 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            width: 77px;
-            height: 84px;
-            color: #FFFFFFB3;
-            border: 1px solid #6e6868;
-            border-top: 0;
-            border-right: 0;
-        }
-
-        .div17 i {
-            font-size: 32px;
-        }
-
-        .span8 {
-            font-size: 12px;
-        }
-
-        .div18 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            width: 1226px;
-            height: 614px;
-            margin: 0 auto;
-        }
-
-        .a2 img {
-            width: 234px;
-            height: 614px;
-        }
-
-        .div19 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-shrink: 0;
-            flex-wrap: wrap;
-            align-items: center;
-            width: 234px;
-            height: 300px;
-            background-color: #FFFFFF;
-            transition: all 0.3s;
-            overflow: hidden;
-        }
-
-        .div19-3 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-shrink: 0;
-            flex-wrap: wrap;
-            align-items: center;
-            width: 234px;
-            height: 300px;
-            background-color: #FFFFFF;
-        }
-
-
-        .div19 img {
-            width: 150px;
-            height: 150px;
-        }
-
-        .div19-2 img {
-            width: 150px;
-            height: 150px;
-        }
-
-        .p3 {
-            margin-bottom: 6px;
-            margin-left: 19px;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .span9 {
-            color: #b0b0b0;
-            font-size: 12px;
-        }
-
-        .p4 {
-            margin-top: 6px;
-            margin-left: 50px;
-            color: #ff6709;
-            font-size: 14px;
-        }
-
-        .assessment {
-            position: absolute;
-            overflow: hidden;
-            bottom: -90px;
-            background-color: #FF6700;
-            width: 234px;
-            height: 90px;
-            transition: all 0.3s;
-
-        }
-
-        .p5 {
-            font-size: 12px;
-            color: #FFFFFF;
-        }
-
-        .p6 {
-            font-size: 12px;
-            color: #FFFFFF99;
-        }
-
-        .div18>a {
-            transition: all 0.3s;
-        }
-
-        .div19:hover {
-            box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .a1:hover {
-            box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .div21 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            width: 992px;
-            height: 614px;
-        }
-
-        .div22 {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-shrink: 0;
-            flex-wrap: wrap;
-            align-items: center;
-            width: 234px;
-            height: 300px;
-        }
-
-        .div22 .img1 {
-
-            width: 80px;
-            height: 80px;
-        }
-
-        .div24 {
-            margin-top: 25px;
-            margin-left: 80px;
-        }
-
-        .div23 a {
-            display: flex;
-            color: #333;
-        }
-
-        .div23 {
-            width: 234px;
-            height: 143px;
-            background-color: #fff;
-            transition: all 0.3s;
-        }
-
-        .p7 {
-            margin-top: 35px;
-            margin-left: 4px;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .p10 {
-            margin-top: 65px;
-            margin-left: -95px;
-            color: #ff6709;
-            font-size: 14px;
-        }
-
-        .div23 .img2 {
-            width: 62px;
-            height: 60px;
-        }
-
-        .div25 {
-            margin-top: 40px;
-            margin-left: 120px;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        .p8 {
-            margin-top: 5px;
-            margin-left: 4px;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .span11 {
-            margin-top: 65px;
-            margin-left: -55px;
-            color: #ff6709;
-            font-size: 14px;
-        }
-
-        .div23:hover {
-            box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .a3 img {
-            width: 234px;
-            height: 300px;
-        }
-
-        .div18-2 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            width: 1226px;
-            height: 300px;
-            margin: 0 auto;
-        }
-
-        .div19-2 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-shrink: 0;
-            flex-wrap: wrap;
-            align-items: center;
-            width: 234px;
-            height: 300px;
-            background-color: #FFFFFF;
-            transition: all 0.3s;
-        }
-
-        .div19-2:hover {
-            box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .div26 {
-            display: flex;
-            justify-content: space-between;
-            width: 1226px;
-            height: 415px;
-            margin: 0 auto;
-        }
-
-        .div26-1 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            width: 296px;
-            height: 415px;
-            transition: all 0.3s;
-        }
-
-        .div26-1:hover {
-            box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .div27 img {
-            width: 296px;
-            height: 220px;
-        }
-
-        .div28 {
-            width: 240px;
-            height: 107.8px;
-        }
-
-        .commit {
-            font-size: 14px;
-            color: #333333;
-        }
-
-        .commit-user {
-            margin-top: 35px;
-            font-size: 12px;
-            color: #B0B0B0;
-        }
-
-        .user {
-            font-style: 14px;
-        }
-
-        .div29 {
-            width: 100%;
-            font-size: 14px;
-            color: #B0B0B0;
-        }
-
-        .div29 p {
-            float: left;
-            margin-right: 15px;
-        }
-
-        .title {
-            margin-left: 30px;
-            font-weight: 400;
-            color: #333333;
-        }
-
-        .price {
-            color: #FF6709;
-
-        }
-
-        .title2 {
-            margin-top: 40px;
-            color: #ffac13;
-            font-size: 16px;
-            font-weight: 400;
-
-        }
-
-        .title3 {
-            margin-top: -25px;
-            font-size: 20px;
-            font-weight: 400;
-        }
-
-        .commit2 {
-            margin-top: -25px;
-            width: 200px;
-            font-size: 12px;
-            line-height: 20px;
-            height: 40px;
-            color: #b0b0b0;
-            text-align: center;
-        }
-
-        .price2 {
-            font-size: 14px;
-            margin-top: -30px;
-        }
-
-        .div26-1>img {
-            padding-bottom: 50px;
-            width: 216px;
-            height: 154px;
-        }
-
-        .div30 {
-            width: 1226px;
-            height: 285px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0px;
-        }
-
-        .div30-1 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            width: 296px;
-            height: 285px;
-            transition: all 0.3s;
-        }
-
-        .video img {
-            width: 296px;
-            height: 180px;
-        }
-
-        .video {
-            position: relative;
-        }
-
-        .video i {
-            position: absolute;
-            bottom: 10px;
-            left: 5px;
-            font-size: 40px;
-            color: rgb(238, 229, 229);
-            transition: all 0.3s;
-        }
-
-        .title4 {
-            color: black;
-            font-size: 14px;
-            font-weight: 400;
-
-        }
-
-        .a5 {
-            padding-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .commit3 {
-            font-size: 12px;
-            color: #b0b0b0;
-        }
-
-        .div30-1:hover i {
-            color: #FF6700;
-        }
-
-        .div30-1:hover {
-            box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .bottom {
-            width: 100%;
-            background-color: #fff;
-        }
-
-        .spacer {
-            width: 100%;
-            height: 150px;
-        }
-
-        .ul13 {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 0 auto;
-            width: 1226px;
-            height: 86px;
-            margin-top: 50px;
-            list-style: none;
-            color: #e0e0e0;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .ul13 li {
-            line-height: 100%;
-            text-align: center;
-        }
-
-        .ul13 i {
-            font-size: 20px;
-        }
-
-        .div31 {
-            display: flex;
-            justify-content: space-between;
-            width: 1226px;
-            margin: 0 auto;
-            height: 132px;
-        }
-
-        .div32 {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            width: 120px;
-            height: 112px;
-        }
-
-        .span10 {
-            font-size: 14px;
-            color: #424242;
-            margin-bottom: 40px;
-        }
-
-        .span12 {
-            color: #757575;
-            font-size: 12px;
-        }
-
-        .div33 {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-            width: 252px;
-            height: 112px;
-        }
-
-        .span13 {
-            font-size: 22px;
-            color: #ff6700;
-        }
-
-        .span14 {
-            width: 120px;
-            color: #616161;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .a6 {
-            width: 120px;
-            height: 30px;
-            border: 1px solid #FF6700;
-            color: #FF6700;
-            font-size: 12px;
-            line-height: 30px;
-            text-align: center;
-        }
-
-        .div33 .a6:hover {
-            background-color: #FF6700;
-            color: #fff;
-        }
-
-        .div34 {
-            position: relative;
-            width: 1226px;
-            height: 120px;
-            margin: 34px auto;
-        }
-
-        .div34>img {
-            float: left;
-            width: 57px;
-            height: 57px;
-        }
-
-        .div35 {
-            float: left;
-            margin-left: 20px;
-        }
-
-        .p11 {
-            font-size: 12px;
-            color: #757575;
-        }
-
-        .p12 {
-            font-size: 12px;
-            color: #b0b0b0;
-        }
-
-        .imgbox img {
-            width: 85px;
-            height: 28px;
-            float: right;
-        }
-
-        .end {
-            height: 50px;
-            text-align: center;
-            width: 100%;
-            background-color: rgb(250, 250, 250);
-        }
-
-        .bottom a {
-            color: #616161;
-        }
-
-        .bottom a:hover {
-            color: #FF6700;
-        }
-
-        /* 注册登录部分CSS */
-        .main-cotainer {
-            width: 100%;
-        }
-
-        .main {
-
-            padding: 10px 0 10px 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.2);
-            width: 360px;
-            margin: 0 auto;
-        }
-
-        .userinfo {
-            margin: 30px 0;
-        }
-
-        .content-name {
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #606266;
-        }
-
-        input {
-            outline: 0;
-        }
-
-        .userinfo input {
-            border-radius: 5px;
-            height: 40px;
-            width: 318px;
-            border: 1px solid rgb(218, 218, 218);
-        }
-
-        .sub {
-            border: 0;
-            border-radius: 5px;
-            width: 70px;
-            height: 40px;
-            background-color: rgb(64, 158, 255);
-            color: #fff;
-            line-height: 40px;
-            text-align: center;
-        }
-
-        .sub:hover {
-            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        .adminbox {
-            margin: 20px 0;
-        }
-
-        .adminbox span {
-            font-size: 14px;
-            color: #606266;
-        }
-
-        /* 页面转换部分 */
-        .box {
-            width: 100%;
-        }
-
-        .box>div {
-            background-color: #fff;
-            display: none;
-            margin: 0 auto;
-        }
-
-        .show {
-            display: block !important;
-        }
-
-        /* 购物车部分CSS */
-        .cart {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        .cart table {
-            width: 100%;
-            border: 1px solid #ccc;
-        }
-
-        .cart thead td {
-            padding: 5px 10px;
-            background-color: rgb(224, 221, 221);
-        }
-
-        p {
-            font-size: 12px;
-            color: #333;
-        }
-
-        .size {
-            font-size: 12px;
-            color: #333;
-        }
-
-        .deletebtn {
-            margin-right: -1px;
-            width: 17px;
-            height: 19px;
-            border: 0.1px solid black;
-            border-right: 0;
-        }
-
-
-        .plusbtn {
-            margin-left: -5px;
-            width: 17px;
-            height: 19px;
-            border: 0.1px solid black;
-            border-left: 0;
-
-        }
-
-        .number {
-            width: 40px;
-            height: 17px;
-            border: 0.1px solid black;
-            text-align: center;
-        }
-
-        .delete {
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-            border: 1px solid black;
-            line-height: 30px;
-            font-size: 14px;
-            color: black;
-        }
-
-        .delete:hover {
-            cursor: pointer;
-            background-color: #e1251b;
-            color: white;
-        }
-
-        td {
-            text-align: center;
-        }
-
-        .checkout {
-            width: 1200px;
-            margin: 20px auto;
-            height: 50px;
-            border: 1px solid #333;
-        }
-
-        .total {
-            display: inline-block;
-            margin: 0 5px;
-            font-size: 16px;
-        }
-
-        .checkout p {
-            margin-top: 5px;
-        }
-
-        .total-money {
-            margin: 0 5px;
-            font-size: 16px;
-        }
-
-        .buy {
-            left: 0;
-            right: 0;
-            position: absolute;
-            margin: 18px auto;
-            width: 68px;
-            height: 25px;
-            line-height: 20px;
-            text-align: center;
-            background-color: #FF6700;
-            color: white;
-            border: 0;
-            border-radius: 4px;
-        }
-
-        .buy:hover {
-            cursor: pointer;
-            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .goodsimg {
-            width: 50px;
-            height: 50px;
-        }
-
-        tr {
-            border-top: 1px solid #ccc;
-            padding: 10px 10px;
-        }
-
-        /* 管理员部分的CSS */
-        .adminBox {
-            width: 100%;
-        }
-
-        .adminBtn:after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-
-        .row:after {
-            display: block;
-            content: "";
-            clear: both;
-        }
-
-        .row {
-            padding: 0;
-        }
-
-        .admin {
-            width: 1450px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        .admin-header {
-            position: relative;
-            height: 50px;
-            padding: 0 32px;
-            background: #f8f8f9;
-            border-bottom: 1px solid #dddee1;
-        }
-
-        .addData {
-            position: absolute;
-            right: 60px;
-            top: 4px;
-            color: #606266;
-            border-radius: 3px;
-            border: 1px solid #ccc;
-            width: 126px;
-            height: 40px;
-            text-align: center;
-            line-height: 40px;
-            background-color: #fff;
-        }
-
-        .admin-title {
-            position: absolute;
-            top: 15px;
-            font-size: 14px;
-        }
-
-
-        .titleBox {
-            padding: 5px 32px;
-            border-bottom: 1px solid #dddee1;
-            background: #eee;
-        }
-
-        .operate {
-            float: right;
-            text-align: center;
-            width: 150px;
-            display: inline-block;
-        }
-
-        .admin-name {
-            width: 200px;
-            float: left;
-        }
-
-        .detail {
-            border-top: 1px solid #dddee1;
-            margin-bottom: 6px;
-            padding-right: 32px;
-            padding-top: 17px;
-            padding-bottom: 35px;
-        }
-
-        .Btn {
-            width: 50px;
-            height: 30px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-        }
-
-        button:hover {
-            cursor: pointer;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .detail span {
-            font-size: 12px;
-        }
-
-        /* 添加信息部分CSS */
-        input {
-            outline: 0;
-        }
-
-        .addBox {
-            position: absolute;
-            top: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 3000;
-        }
-
-        .add {
-            position: absolute;
-            top: 100px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            width: 456px;
-            height: 544px;
-            background-color: #fff;
-            z-index: 3001;
-        }
-
-        .add-header {
-            width: 100%;
-            padding: 20px 20px;
-            font-size: 18px;
-        }
-
-        .add-title {
-            margin: 5px 0;
-            color: #606266;
-            font-size: 14px;
-        }
-
-        .add-detail input {
-            width: 415px;
-            height: 40px;
-            line-height: 40px;
-            border-radius: 4px;
-            border: 1px solid #dcdfe6;
-        }
-
-        .add-detail {
-            margin-left: 20px;
-            margin-bottom: 5px;
-        }
-
-        .backBtn {
-            width: 70px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            background-color: #fff;
-            border: 1px solid #dcdfe6;
-            border-radius: 8px;
-            float: right;
-            color: #606266;
-            font-size: 14px;
-        }
-
-        .confirmBtn {
-            margin: 0 20px;
-            font-size: 14px;
-            width: 98px;
-            height: 40px;
-            border: 0;
-            float: right;
-            background-color: #409eff;
-            border-radius: 8px;
-            color: #fff;
-        }
-    </style>
 </head>
 
 <body>
+    <!-- 头部 -->
     <div class="header">
+        <!-- 导航栏 -->
         <span class="span1">
             <a href="#" class="toBody">小米商城</a>
             |
@@ -1502,12 +52,14 @@
             <div class="div1">购物车中还没有商品，赶快选购吧!</div>
         </span>
     </div>
+    <!-- 头部/分类展示标题部分 -->
     <div class="div2">
         <div class="div3"></div>
         <div class="div4"></div>
         <ul class="ul1">
             <li class="li1">
                 <a href="#">小米手机</a>
+                <!-- 鼠标移上去，所出现的盒子 -->
                 <div class="div7">
                     <div class="div6">
                         <span class="span5">新品</span>
@@ -1539,6 +91,7 @@
             <li><a href="#">服务</a></li>
             <li><a href="#">社区</a></li>
         </ul>
+        <!-- 搜索框 -->
         <div class="div5">
             <input type="search" class="input1">
             <button class="btn1"><span class="iconfont icon-sousuo"></span></button>
@@ -1560,10 +113,11 @@
         <!-- 主页部分 -->
         <div class="body show">
             <div class="div10">
+                <!-- 左边那一列所展示的分类名称 -->
                 <ul class="ul3">
                     <li class="ul3-li1">
                         <a href="#">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp手机 电话卡</a><span>></span>
-
+                        <!-- 鼠标移上去，所出现的盒子 -->
                         <ul class="ul11" id="ul11">
                             <li>
                                 <a href="#">
@@ -1643,7 +197,7 @@
                     <li><a href="#">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp箱包 服饰 鞋 眼镜</a><span>></span></li>
                     <li><a href="#">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp米兔 生活周边</a><span>></span></li>
                 </ul>
-
+                <!-- 轮播图 -->
                 <ul="list">
                     <li class="item active">
                         <img
@@ -2755,6 +1309,7 @@
                         <td>操作</td>
                     </tr>
                 </thead>
+                <!-- 每个商品展示的行 -->
                 <!-- <tr data-gid='0'>
                     <td>
                         <input type="checkbox" class="checkbox">
@@ -2841,110 +1396,112 @@
                 </div>
             </div>
         </div>
-        <div class="bottom">
-            <div>
-                <ul class="ul13">
-                    <li><a href="#">
-                            <i class="iconfont icon-editor2"></i>&nbsp预约维修服务
-                        </a>
-                    </li>
-                    |
-                    <li>
-                        <a href="#">
-                            <i class="iconfont icon-7"></i>&nbsp7天无理由退货
-                        </a>
-                    </li>
-                    |
-                    <li>
-                        <a href="#">
-                            <i class="iconfont icon-15"></i>&nbsp15天免费换货
-                        </a>
-                    </li>
-                    |
-                    <li>
-                        <a href="#">
-                            <i class="iconfont icon-gift"></i>&nbsp满150元包邮
-                        </a>
-                    </li>
-                    |
-                    <li>
-                        <a href="#">
-                            <i class="iconfont icon-wxbdingwei"></i>&nbsp520余家售后网点
-                        </a>
-                    </li>
-                </ul>
+    </div>
+    <!-- 底部 -->
+    <div class="bottom">
+        <div>
+            <ul class="ul13">
+                <li><a href="#">
+                        <i class="iconfont icon-editor2"></i>&nbsp预约维修服务
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-7"></i>&nbsp7天无理由退货
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-15"></i>&nbsp15天免费换货
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-gift"></i>&nbsp满150元包邮
+                    </a>
+                </li>
+                |
+                <li>
+                    <a href="#">
+                        <i class="iconfont icon-wxbdingwei"></i>&nbsp520余家售后网点
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="div31">
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
             </div>
-            <div class="div31">
-                <div class="div32">
-                    <span class="span10">帮助中心</span>
-                    <span class="span12"><a href="#">账户管理</a></span>
-                    <span class="span12"><a href="#">购物指南</a></span>
-                    <span class="span12"><a href="#">订单操作</a></span>
-                </div>
-                <div class="div32">
-                    <span class="span10">帮助中心</span>
-                    <span class="span12"><a href="#">账户管理</a></span>
-                    <span class="span12"><a href="#">购物指南</a></span>
-                    <span class="span12"><a href="#">订单操作</a></span>
-                </div>
-                <div class="div32">
-                    <span class="span10">帮助中心</span>
-                    <span class="span12"><a href="#">账户管理</a></span>
-                    <span class="span12"><a href="#">购物指南</a></span>
-                    <span class="span12"><a href="#">订单操作</a></span>
-                </div>
-                <div class="div32">
-                    <span class="span10">帮助中心</span>
-                    <span class="span12"><a href="#">账户管理</a></span>
-                    <span class="span12"><a href="#">购物指南</a></span>
-                    <span class="span12"><a href="#">订单操作</a></span>
-                </div>
-                <div class="div32">
-                    <span class="span10">帮助中心</span>
-                    <span class="span12"><a href="#">账户管理</a></span>
-                    <span class="span12"><a href="#">购物指南</a></span>
-                    <span class="span12"><a href="#">订单操作</a></span>
-                </div>
-                <div class="div32">
-                    <span class="span10">帮助中心</span>
-                    <span class="span12"><a href="#">账户管理</a></span>
-                    <span class="span12"><a href="#">购物指南</a></span>
-                    <span class="span12"><a href="#">订单操作</a></span>
-                </div>
-                <div class="div33">
-                    <span class="span13">400-100-5678</span>
-                    <span class="span14">周一至周日 8:00-18:00
-                        （仅收市话费）</span>
-                    <a href="#" class="a6">24小时在线客服</a>
-                </div>
-
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
             </div>
-
-            <div class="div34">
-                <img src="http://s02.mifile.cn/assets/static/image/logo-mi2.png">
-                <div class="div35">
-                    <p class="p11">
-                        小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</p>
-                    <p class="p12">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</p>
-                    <p class="p12">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
-                </div>
-                <div class="imgbox">
-                    <img src="http://i1.mifile.cn/f/i/17/site/truste.png">
-                    <img src="http://s01.mifile.cn/i/v-logo-2.png">
-                    <img src="http://xyt.xinchacha.com/img/icon/icon3.png">
-                    <img src="http://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png">
-                </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div32">
+                <span class="span10">帮助中心</span>
+                <span class="span12"><a href="#">账户管理</a></span>
+                <span class="span12"><a href="#">购物指南</a></span>
+                <span class="span12"><a href="#">订单操作</a></span>
+            </div>
+            <div class="div33">
+                <span class="span13">400-100-5678</span>
+                <span class="span14">周一至周日 8:00-18:00
+                    （仅收市话费）</span>
+                <a href="#" class="a6">24小时在线客服</a>
             </div>
 
-            <div class="end">
-                <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAATCAMAAACwedgiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkMxNDdEOTcyRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkMxNDdEOTczRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzE0N0Q5NzBEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzE0N0Q5NzFEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jm4Y6AAAAM1BMVEXa2tr29vbq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">
+        </div>
 
+        <div class="div34">
+            <img src="http://s02.mifile.cn/assets/static/image/logo-mi2.png">
+            <div class="div35">
+                <p class="p11">
+                    小米商城|MIUI|米聊|多看书城|小米路由器|视频电话|小米天猫店|小米淘宝直营店|小米网盟|小米移动|隐私政策|Select Region</p>
+                <p class="p12">©mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2014]0059-0009号</p>
+                <p class="p12">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+            </div>
+            <div class="imgbox">
+                <img src="http://i1.mifile.cn/f/i/17/site/truste.png">
+                <img src="http://s01.mifile.cn/i/v-logo-2.png">
+                <img src="http://xyt.xinchacha.com/img/icon/icon3.png">
+                <img src="http://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png">
             </div>
         </div>
-        <script src="../js/1.js"></script>
-        <script src="../js/cart.js"></script>
-        <script src="../js/login.js"></script>
+
+        <div class="end">
+            <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAATCAMAAACwedgiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkMxNDdEOTcyRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkMxNDdEOTczRDkyRDExRTVCNzM2QTA5RTY4NEI2NDc1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzE0N0Q5NzBEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzE0N0Q5NzFEOTJEMTFFNUI3MzZBMDlFNjg0QjY0NzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4jm4Y6AAAAM1BMVEXa2tr29vbq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">
+
+        </div>
+    </div>
+    <script src="../js/1.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>

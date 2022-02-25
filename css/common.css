@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+ /* 页面转换部分 */
+ .box {
+    width: 100%;
+}
+
+.box>div {
+    background-color: #fff;
+    display: none;
+    margin: 0 auto;
+}
+
+.show {
+    display: block !important;
+}
