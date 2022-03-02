@@ -99,12 +99,105 @@ toCart.addEventListener('click', function () {
                     tdOfDelete.appendChild(aOfDelete);
                     aOfDelete.innerText = "删除";
                 })
-
                 //购物车操作
+
+                //计算数量
+                let number = document.getElementsByClassName("number");
+                let plusbtn = document.getElementsByClassName("plusbtn");
+                let minusbtn = document.getElementsByClassName("deletebtn");
+                let count = document.getElementsByClassName("count");
+                let index1 = 0;
+                let ii = 0
+                let sum = 0;
+                let price = document.getElementsByClassName("goodsPrice");
+                count[index1].innerText = number[index1].value * (price[index1]).innerText;
+
+
+                //计算总数，总价
+                let total = document.getElementsByClassName("total")[0];
+                total.innerText = number.length;
+                let totalMoney = document.getElementsByClassName('total-money')[0];
+                totalMoney.innerText = 0;
+
+
+                //选择操作
+                let checkbox = document.getElementsByClassName("checkbox");
+                for (ii = 0; ii < checkbox.length; ii++) {
+                    checkbox[ii].index1 = ii;
+                    checkbox[ii].onclick = function () {
+                        //let index1 = this.parentNode.parentNode.getAttribute("data-gid");
+                        console.log(this.index1);
+                        if (checkbox[this.index1].checked) {
+                            sum += parseInt(count[this.index1].innerText);
+                        }
+                        else {
+                            sum -= parseInt(count[this.index1].innerText);
+                        }
+                        totalMoney.innerText = sum;
+
+                    }
+                }
+                //增加操作
+                for (ii = 0; ii < plusbtn.length; ii++) {
+                    plusbtn[ii].index1 = ii;
+                    plusbtn[ii].addEventListener("click", function () {
+                        //index1 = this.parentNode.parentNode.getAttribute("data-gid");
+                        console.log(this.index1);
+                        number[this.index1].value++;
+                        //计算小计
+                        //price = price[index1].innerText;
+                        count[this.index1].innerText = number[this.index1].value * price[this.index1].innerText;
+                        if (checkbox[this.index1].checked) {
+                            sum += parseInt(price[this.index1].innerText);
+                            totalMoney.innerText = sum;
+                        }
+
+                    })
+                }
+
+                //减少操作
+                for (ii = 0; ii < minusbtn.length; ii++) {
+                    minusbtn[ii].index1 = ii;
+                    minusbtn[ii].addEventListener("click", function () {
+                        //index1 = this.parentNode.parentNode.getAttribute("data-gid");
+                        console.log(this.index1);
+                        if (number[this.index1].value == 1) {
+                            if (checkbox[this.index1].checked) {
+                                sum -= parseInt(price[this.index1].innerText);
+                                console.log(sum);
+                                totalMoney.innerText = sum;
+                            }
+                            this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+                            console.log(price[this.index1].innerText);
+                        }
+                        else {
+                            number[this.index1].value--;
+
+                            if (checkbox[this.index1].checked) {
+                                console.log(sum);
+                                sum -= parseInt(price[this.index1].innerText);
+                                console.log(sum);
+                                totalMoney.innerText = sum;
+                            }
+                        }
+                        //计算小计
+                        count[this.index1].innerText = number[this.index1].value * price[this.index1].innerText;
+
+
+                    })
+
+
+                }
                 //删除操作
                 let remove = document.getElementsByClassName("delete");
                 for (let ii = 0; ii < remove.length; ii++) {
+                    remove[ii].index1 = ii;
                     remove[ii].addEventListener("click", function () {
+                        if (checkbox[this.index1].checked) {
+                            sum = parseInt(totalMoney.innerText);
+                            sum -= parseInt(count[this.index1].innerText);
+                            totalMoney.innerText = sum; total.innerText--;
+                        }
                         this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
                         let idx = this.parentNode.parentNode.getAttribute('gata-gid');
                         ajax({
@@ -122,89 +215,6 @@ toCart.addEventListener('click', function () {
                         })
                     })
 
-                }
-
-                //计算数量
-                let number = document.getElementsByClassName("number");
-                let plusbtn = document.getElementsByClassName("plusbtn");
-                let minusbtn = document.getElementsByClassName("deletebtn");
-                let count = document.getElementsByClassName("count");
-                let index1 = 0;
-                let ii = 0
-                let sum = 0;
-                let price = document.getElementsByClassName("goodsPrice");
-                // console.log(price[index1].innerText);
-                //console.log(number[index1].value);
-                count[index1].innerText = number[index1].value * (price[index1]).innerText;
-                // console.log(count[index1].innerText);
-
-
-                //计算总数，总价
-                let total = document.getElementsByClassName("total")[0];
-                total.innerText = number.length;
-                let totalMoney = document.getElementsByClassName('total-money')[0];
-                totalMoney.innerText = 0;
-
-                //选择操作
-                let checkbox = document.getElementsByClassName("checkbox");
-                for (ii = 0; ii < checkbox.length; ii++) {
-                    checkbox[ii].onclick = function () {
-                        let index1 = this.parentNode.parentNode.getAttribute("data-gid");
-                        console.log(index1);
-                        if (checkbox[index1].checked) {
-                            sum += parseInt(count[index1].innerText);
-                        }
-                        else {
-                            sum -= parseInt(count[index1].innerText);
-                        }
-                        totalMoney.innerText = sum;
-
-                    }
-                }
-                //增加操作
-                for (ii = 0; ii < plusbtn.length; ii++) {
-                    plusbtn[ii].addEventListener("click", function () {
-                        index1 = this.parentNode.parentNode.getAttribute("data-gid");
-                        console.log(index1);
-                        number[index1].value++;
-                        //计算小计
-                        //price = price[index1].innerText;
-                        count[index1].innerText = number[index1].value * price[index1].innerText;
-                        if (checkbox[index1].checked) {
-                            sum += parseInt(price[index1].innerText);
-                            totalMoney.innerText = sum;
-                        }
-
-                    })
-                }
-
-                //减少操作
-                for (ii = 0; ii < minusbtn.length; ii++) {
-                    minusbtn[ii].addEventListener("click", function () {
-                        index1 = this.parentNode.parentNode.getAttribute("data-gid");
-                        console.log(index1);
-                        if (number[index1].value == 1) {
-                            if (checkbox[index1].checked) {
-                                sum -= parseInt(price[index1].innerText);
-                                console.log(sum);
-                                totalMoney.innerText = sum;
-                            }
-                            this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-                            console.log(price[index1].innerText);
-                        }
-                        else {
-                            number[index1].value--;
-
-                            if (checkbox[index1].checked) {
-                                console.log(sum);
-                                sum -= parseInt(price[index1].innerText);
-                                console.log(sum);
-                                totalMoney.innerText = sum;
-                            }
-                        }
-                        //计算小计
-                        count[index1].innerText = number[index1].value * price[index1].innerText;
-                    })
                 }
             }
         }

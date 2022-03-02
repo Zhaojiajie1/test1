@@ -50,7 +50,7 @@ setInterval(function () {
     }
 }, 200)
 
-//商品的js
+//鼠标浮上去，商品部分的js
 let assessments = document.getElementsByClassName("assessment");
 let goods = document.getElementsByClassName("div19");
 
@@ -98,7 +98,7 @@ let body = document.getElementsByClassName('body')[0];
 let toBody = document.getElementsByClassName('toBody')[0];
 let toCart = document.getElementsByClassName('toCart')[0];
 let cart = document.getElementsByClassName('cart')[0];
-//注册
+//-注册
 toRegister.addEventListener('click', function () {
     for (let i = 0; i < childBox.length; i++) {
         childBox[i].classList.remove('show');
@@ -107,7 +107,7 @@ toRegister.addEventListener('click', function () {
 
     box.style.height = document.getElementsByClassName('show')[0].offsetHeight + 'px';
 })
-//登录
+//-登录
 toLogin.addEventListener('click', function () {
     for (let i = 0; i < childBox.length; i++) {
         childBox[i].classList.remove('show');
@@ -116,7 +116,7 @@ toLogin.addEventListener('click', function () {
 
     box.style.height = document.getElementsByClassName('show')[0].offsetHeight + 'px';
 })
-//小米商城
+//-小米商城
 toBody.addEventListener('click', function () {
     for (let i = 0; i < childBox.length; i++) {
         childBox[i].classList.remove('show');
@@ -126,7 +126,7 @@ toBody.addEventListener('click', function () {
     box.style.height = document.getElementsByClassName('show')[0].offsetHeight + 'px';
 })
 
-//注册部分JS
+//-注册部分JS
 let creatUsername = document.getElementById('creatUsername');
 let creatPassword = document.getElementById('creatPassword');
 let creatName = document.getElementById('creatName');
