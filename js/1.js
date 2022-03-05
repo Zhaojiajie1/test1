@@ -202,6 +202,7 @@ for (let i = 0; i < buyBtn.length; i++) {
                 console.log(res);
                 alert(res.message);
                 if (res.state == 1) {
+                    //增加购物车显示的数量
                     cartnumber++;
                     cartnum.innerText = cartnumber;
                 }

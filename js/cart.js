@@ -193,6 +193,8 @@ toCart.addEventListener('click', function () {
                 for (let ii = 0; ii < remove.length; ii++) {
                     remove[ii].index1 = ii;
                     remove[ii].addEventListener("click", function () {
+                        console.log(cartnumber.innerText);
+                        console.log(total.innerText);
                         if (checkbox[this.index1].checked) {
                             sum = parseInt(totalMoney.innerText);
                             sum -= parseInt(count[this.index1].innerText);
